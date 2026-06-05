@@ -1,0 +1,113 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>CALCULATEE</title>
+    <style>
+         body {
+            display: flex;
+            height: 100vh;
+            justify-content: center;
+            align-items: center;
+            font-family: Arial, Helvetica, sans-serif;
+            margin: 0;
+        }
+        .cal{
+            border-radius: 10px;
+            padding: 30px;
+            width: 300px;
+            height: 500px;
+            background: black;
+        
+        }
+  #displa {
+            width: 100%;
+            height: 50px;
+            border: none;
+            outline: none;
+            color: #fff;
+            border-radius: 3px;
+            box-sizing: border-box;
+            padding: 5px 10px;
+            text-align: right;
+            font-size: 30px;
+            margin-bottom: 15px;
+            font-family: Verdana, Geneva, Tahoma, sans-serif;
+            
+        }
+        .butttons{
+          display: grid; 
+          grid-template-columns: auto auto auto auto;
+          gap: 5px;
+          justify-content: center;
+          margin-top: 120px;
+        }
+        button{
+            padding: 25px;
+            background:forestgreen;
+             color: white;
+             border: none;
+             width: 80px;
+             border-radius: 5px;
+        }
+        button:hover{
+            background:black;
+            color: white;
+        }
+    </style>
+</head>
+<body>
+    <div class="cal">
+<div  id="displa" ></div>
+<div class="butttons">
+    <button onclick="cleard()">C</button>
+    <button onclick="operator('%')">%</button>
+    <button onclick="operator('-')">-</button>
+    <button onclick="operator('*')">*</button>
+    <button onclick="operator('/')">/</button>
+
+<button onclick="operator('1')">1</button>
+<button onclick="operator('2')">2</button>
+<button onclick="operator('3')">3</button>
+<button onclick="operator('+')">+</button>
+
+
+<button onclick="operator('4')">4</button>
+<button onclick="operator('5')">5</button>
+<button onclick="operator('6')">6</button>
+<button onclick="total()">=</button>
+
+
+<button onclick="operator('7')">7</button>
+<button onclick="operator('8')">8</button>
+<button onclick="operator('9')">9</button>
+<button onclick="operator('0')">0</button>
+<button onclick="deletee()">Delete</button>
+<button onclick="operator('')"></button>
+<button onclick="operator('.')">.</button>
+
+</div>
+    </div>
+</body>
+<script>
+ function operator(d){
+    document.getElementById("displa").innerHTML +=d;
+ }
+ function total(){
+    let x=document.getElementById("displa").innerHTML;
+    let y=eval(x);
+    document.getElementById("displa").innerHTML =y;
+ }
+ function cleard(){
+let a ="";
+document.getElementById("displa").innerHTML=a;
+ }
+
+ function deletee(){
+  
+   let x= document.getElementById("displa");
+   x.innerHTML=x.innerHTML.slice(0,-1);
+ }
+</script>
+</html>
